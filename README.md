@@ -24,6 +24,7 @@ To check the whole kernel:
 # Found bugs
 * [e4eda8e0](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=e4eda8e0654c19cd7e3d143b051f3d5c213f0b43)
 * [19d8cedd](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=19d8ceddda8b3a806a0960106ae6aa4dcc21df3b)
+* <https://lkml.org/lkml/2013/5/6/120>
 
 # False positives
 
