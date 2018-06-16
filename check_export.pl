@@ -27,8 +27,8 @@ use Getopt::Long qw(:config gnu_getopt);
 my $pattern = '';
 
 GetOptions(
-   'init|i!'   => sub { if ( $pattern !~ m/__init/ ) { $pattern = $pattern . '(?:__init)|'; } },
-   'exit|e!'   => sub { if ( $pattern !~ m/__exit/ ) { $pattern = $pattern . '(?:__exit)|'; } },
+   'init|i!'   => sub { if ( $pattern !~ m/__init/ ) { $pattern = $pattern . '(?:__(\w*)init)|'; } },
+   'exit|e!'   => sub { if ( $pattern !~ m/__exit/ ) { $pattern = $pattern . '(?:__(\w*)exit)|'; } },
    'inline|n!' => sub { if ( $pattern !~ m/inline/ ) { $pattern = $pattern . '(?:inline)|'; } },
    'static|s!' => sub { if ( $pattern !~ m/static/ ) { $pattern = $pattern . '(?:static)|'; } },
 ) or die "Incorrect usage!\n";
@@ -38,7 +38,7 @@ if ($pattern) {
    $pattern = '\b(?:' . $pattern;
    $pattern = $pattern . ')\b';
 } else {
-   $pattern = '\b(?:(?:__init)|(?:__exit)|(?:inline)|(?:static))\b';
+   $pattern = '\b(?:(?:__(\w*)init)|(?:__(\w*)exit)|(?:inline)|(?:static))\b';
 }
 
 undef $/;
